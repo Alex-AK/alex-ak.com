@@ -1,0 +1,8 @@
+packages:
+  - .
+
+# Without this, pnpm skips these postinstalls and then exits 1 on every
+# install, which takes `pnpm build` down with it.
+onlyBuiltDependencies:
+  - esbuild
+  - sharp

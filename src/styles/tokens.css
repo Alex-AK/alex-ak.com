@@ -1,0 +1,38 @@
+/**
+ * Ground is the warm neutral shared with Pikos, not a cream: deep green on
+ * cream drifts herbal, and on warm grey it reads as ink.
+ *
+ * Terracotta is deliberately absent. It is Pikos's identity colour and never
+ * takes a functional job, so this site uses green and leaves it alone.
+ *
+ * Dark mode would redefine this block under `:root[data-theme='dark']` and
+ * nothing else needs to change. The green does not survive the swap unmodified.
+ */
+
+:root {
+  --ground: #f8f8f6;
+  --ink: #161613;
+  --muted: #6e6d69;
+  --muted-strong: #53524f;
+  --rule: #e6e5e2;
+
+  --accent: #2f6b54;
+  --accent-hover: #1d4536;
+  --accent-soft: #9ab8aa;
+
+  --font-serif: Newsreader, Georgia, 'Times New Roman', serif;
+
+  --text-lead: 1.5625rem;
+  --text-body: 1.1875rem;
+  --text-small: 1.0625rem;
+  --text-label: 0.9375rem;
+
+  --leading-tight: 1.2;
+  --leading-body: 1.6;
+  --leading-lead: 1.55;
+
+  --measure: 39.5rem;
+  --space-section: 3.5rem;
+  --space-block: 1.25rem;
+  --radius: 6px;
+}

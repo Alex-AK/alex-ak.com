@@ -1,0 +1,13 @@
+---
+import { ANALYTICS } from '../consts';
+
+// Umami is cookie-free and collects no personal data, so there is no consent
+// banner to gate this behind. Dev builds would otherwise pollute the numbers.
+const enabled = import.meta.env.PROD;
+---
+
+{
+  enabled && (
+    <script defer src={ANALYTICS.src} data-website-id={ANALYTICS.websiteId} />
+  )
+}

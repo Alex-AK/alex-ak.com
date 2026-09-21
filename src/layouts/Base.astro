@@ -1,0 +1,66 @@
+---
+import Head from '../components/Head.astro';
+import Analytics from '../components/Analytics.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { SITE } from '../consts';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <Head title={title} description={description} />
+    <Analytics />
+  </head>
+  <body>
+    <a href="#main" class="skip">Skip to content</a>
+    <div class="column">
+      <SiteHeader />
+      <main id="main">
+        <slot />
+      </main>
+      <hr />
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+
+<style>
+  /* One measure for every page. Sections space themselves; the column only
+     centres them and sets the reading width. */
+  .column {
+    width: min(var(--measure), 100% - 3rem);
+    margin-inline: auto;
+    padding-block: 7rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-section);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-section);
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--ground);
+    border-radius: var(--radius);
+  }
+</style>

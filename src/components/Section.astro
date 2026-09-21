@@ -1,0 +1,32 @@
+---
+interface Props {
+  label: string;
+  id?: string;
+}
+
+const { label, id } = Astro.props;
+---
+
+<section id={id}>
+  <h2>{label}</h2>
+  <slot />
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  /* A heading belongs to the text under it, so it takes its space above and
+     gives almost none below. Equal gaps read as one undifferentiated column. */
+  h2 {
+    font-size: var(--text-label);
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+</style>

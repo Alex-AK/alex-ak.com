@@ -1,0 +1,45 @@
+---
+import { NAV, SITE } from '../consts';
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`);
+---
+
+<header>
+  <a href="/" class="wordmark">{SITE.title}</a>
+  <nav aria-label="Primary">
+    {
+      NAV.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  .wordmark {
+    color: var(--ink);
+    font-size: 1.1875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.375rem;
+    font-size: 1rem;
+  }
+
+  nav a[aria-current='page'] {
+    color: var(--ink);
+  }
+</style>

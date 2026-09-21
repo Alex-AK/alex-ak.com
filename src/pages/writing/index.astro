@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { listPosts } from '../../lib/posts';
+
+const posts = await listPosts();
+---
+
+<Base
+  title="Writing"
+  description="Essays on finding what's wrong in a system and making the fix stick."
+>
+  <h1>Writing</h1>
+  <PostList posts={posts} empty="First one is in progress." />
+</Base>
+
+<style>
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+</style>

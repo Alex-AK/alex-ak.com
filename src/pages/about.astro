@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import { PIKOS } from '../consts';
+---
+
+<Base
+  title="About"
+  description="Staff software engineer at Solace Health. Product, mostly backend, and the standards a team runs on."
+>
+  <h1>About</h1>
+
+  <div class="prose">
+    <p>
+      I'm a staff software engineer at Solace Health, mostly on the backend. I
+      joined as engineer fifteen and have helped the engineering team grow more
+      than sixfold since.
+    </p>
+    <p>
+      The problems I like best are the ones a team has learned to live with: a
+      dashboard nobody trusts, a default that quietly drives most of the server
+      traffic, a bug that keeps coming back. I find the cause, fix it, and make
+      it hard to reintroduce with a lint rule, a CI check, or a written
+      standard.
+    </p>
+    <p>
+      A lot of what I've built that lasts is process. I wrote how engineers at
+      Solace propose and decide technical changes, and every engineer uses it. I
+      wrote the backend guide the team works from. I've mentored engineers to
+      where they don't need me, which is the goal.
+    </p>
+    <p>
+      Outside work I'm building <a href={PIKOS.site}>Pikos</a>, a local-first
+      notes, tasks and calendar app. Before software I was a biologist and a
+      yoga instructor. I live in Seattle with a dachshund, the best kind of dog.
+    </p>
+    <p>
+      If you're working on something and want a hand thinking it through, I'm
+      easy to reach.
+    </p>
+  </div>
+</Base>
+
+<style>
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+
+  .prose {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+  }
+</style>
