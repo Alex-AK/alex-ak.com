@@ -17,10 +17,12 @@ export const NAV = [
   { href: '/about', label: 'About' },
 ] as const;
 
+export const EMAIL = 'mailto:hello@alex-ak.com';
+
 export const SOCIALS = [
   { href: 'https://github.com/Alex-AK', label: 'GitHub' },
   { href: 'https://linkedin.com/in/alex-ak', label: 'LinkedIn' },
-  { href: 'mailto:hello@alex-ak.com', label: 'Email' },
+  { href: EMAIL, label: 'Email' },
 ] as const;
 
 export const PIKOS = {

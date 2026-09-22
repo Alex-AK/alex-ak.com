@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { PIKOS } from '../consts';
+import { EMAIL, PIKOS } from '../consts';
 ---
 
 <Base
@@ -11,31 +11,34 @@ import { PIKOS } from '../consts';
 
   <div class="prose">
     <p>
-      I'm a staff software engineer at Solace Health, mostly on the backend. I
-      joined as engineer fifteen and have helped the engineering team grow more
-      than sixfold since.
+      I'm Alex, a staff software engineer at Solace Health, mostly on the
+      backend. I've joined three startups early, two of them as the first
+      engineer, so I've seen most of the ways a young codebase can go sideways,
+      and a few ways to keep it from happening.
     </p>
     <p>
-      The problems I like best are the ones a team has learned to live with: a
-      dashboard nobody trusts, a default that quietly drives most of the server
-      traffic, a bug that keeps coming back. I find the cause, fix it, and make
-      it hard to reintroduce with a lint rule, a CI check, or a written
-      standard.
+      The problems I like best are the ones a team has learned to live with: the
+      dashboard nobody trusts, the bug that keeps coming back. I like finding the
+      cause, fixing it with the people who own it, and then making it hard to
+      break again with a lint rule, a CI check, or a short written standard.
     </p>
     <p>
-      A lot of what I've built that lasts is process. I wrote how engineers at
-      Solace propose and decide technical changes, and every engineer uses it. I
-      wrote the backend guide the team works from. I've mentored engineers to
-      where they don't need me, which is the goal.
+      A lot of what I'm proudest of isn't code. At Solace I wrote the process we
+      use to plan work across teams, and the backend guide that new hires and
+      coding agents both learn from. I've done a lot of the interviewing as the
+      team grew, and mentoring is still one of my favorite parts of the job.
     </p>
     <p>
-      Outside work I'm building <a href={PIKOS.site}>Pikos</a>, a local-first
-      notes, tasks and calendar app. Before software I was a biologist and a
-      yoga instructor. I live in Seattle with a dachshund, the best kind of dog.
+      Outside work I'm building <a href={PIKOS.site}>Pikos</a>: notes, tasks and
+      calendar in one app, with everything on your device. It's also where I see
+      how far coding agents can go. I pick the architecture and make the calls,
+      and agents do most of the typing. I also built
+      <a href="https://github.com/Alex-AK/hone">Hone</a>, a small practice app
+      for keeping my own fundamentals sharp.
     </p>
     <p>
-      If you're working on something and want a hand thinking it through, I'm
-      easy to reach.
+      If you want to talk shop, <a href={EMAIL}>email</a>'s the best way to
+      reach me.
     </p>
   </div>
 </Base>
