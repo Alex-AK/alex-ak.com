@@ -2,7 +2,7 @@
  * Ground is the warm neutral shared with Pikos, not a cream: deep green on
  * cream drifts herbal, and on warm grey it reads as ink.
  *
- * Terracotta is deliberately absent. It is Pikos's identity colour and never
+ * Terracotta is deliberately absent. It is Pikos's identity color and never
  * takes a functional job, so this site uses green and leaves it alone.
  *
  * Dark mode would redefine this block under `:root[data-theme='dark']` and
@@ -22,7 +22,9 @@
 
   --font-serif: Newsreader, Georgia, 'Times New Roman', serif;
 
+  --text-title: 2.25rem;
   --text-lead: 1.5625rem;
+  --text-heading: 1.3125rem;
   --text-body: 1.1875rem;
   --text-small: 1.0625rem;
   --text-label: 0.9375rem;
@@ -33,6 +35,8 @@
 
   --measure: 39.5rem;
   --space-section: 3.5rem;
-  --space-block: 1.25rem;
+  --space-title: 2.25rem;
+  --space-block: 1.125rem;
+  --space-tight: 0.5rem;
   --radius: 6px;
 }

@@ -28,15 +28,15 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
 
   .wordmark {
     color: var(--ink);
-    font-size: 1.1875rem;
+    font-size: var(--text-body);
     font-weight: 600;
     letter-spacing: 0.01em;
   }
 
   nav {
     display: flex;
-    gap: 1.375rem;
-    font-size: 1rem;
+    gap: 1.5rem;
+    font-size: var(--text-small);
   }
 
   nav a[aria-current='page'] {

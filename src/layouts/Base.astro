@@ -34,15 +34,14 @@ const { title, description } = Astro.props;
 </html>
 
 <style>
-  /* One measure for every page. Sections space themselves; the column only
-     centres them and sets the reading width. It fills the viewport and main
+  /* One reading measure for every page. The column fills the viewport and main
      takes the slack, so a short page keeps its footer at the bottom instead of
      floating mid-screen. */
   .column {
     width: min(var(--measure), 100% - 3rem);
     min-height: 100dvh;
     margin-inline: auto;
-    padding-block: 7rem 5rem;
+    padding-block: clamp(3rem, 12vw, 7rem) clamp(2.5rem, 8vw, 5rem);
     display: flex;
     flex-direction: column;
     gap: var(--space-section);
