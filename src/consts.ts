@@ -7,7 +7,7 @@ export const SITE = {
   url: 'https://alex-ak.com',
   title: 'Alex King',
   description:
-    'Staff software engineer at Solace Health in Seattle, mostly backend. Building Pikos: notes, tasks, and calendar in one app.',
+    'Staff software engineer in Seattle, working remotely at Solace Health. Building Pikos: notes, tasks, and calendar in one app.',
   author: 'Alex King',
   locale: 'en',
 } as const;
