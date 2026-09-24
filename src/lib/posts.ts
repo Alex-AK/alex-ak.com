@@ -4,7 +4,7 @@ export type Post = CollectionEntry<'writing'>;
 
 /**
  * The only way this site reads the writing collection. Drafts are dropped and
- * order is newest first, so no page, feed or route can disagree about either.
+ * order is newest first, so no page, feed, or route can disagree about either.
  */
 export async function listPosts(): Promise<Post[]> {
   const posts = await getCollection('writing', ({ data }) => !data.draft);

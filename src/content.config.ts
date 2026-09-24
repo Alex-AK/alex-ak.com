@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 /**
- * `draft` keeps a post in the repo and out of every listing, feed and route.
+ * `draft` keeps a post in the repo and out of every listing, feed, and route.
  * Filtering happens in one place, `listPosts()` in src/lib/posts.ts, so a new
  * surface cannot forget to apply it.
  */

@@ -8,5 +8,6 @@ export default defineConfig({
   integrations: [sitemap()],
   markdown: {
     shikiConfig: { theme: 'github-light', wrap: true },
+    smartypants: false,
   },
 });
