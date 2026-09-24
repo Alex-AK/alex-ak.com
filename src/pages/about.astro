@@ -1,57 +1,144 @@
 ---
 import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
 import { EMAIL, PIKOS } from '../consts';
+
+const values = [
+  {
+    label: 'Simple over clever.',
+    text: "Code someone else can change without asking me how it works.",
+  },
+  {
+    label: 'Fix it once.',
+    text: 'When a bug keeps coming back, I fix whatever lets it back in.',
+  },
+  {
+    label: 'Say it early.',
+    text: 'When something is running late, people hear it the same day, along with a smaller plan.',
+  },
+  {
+    label: "Make other people's work easier.",
+    text: "It's why I'm usually the one who writes the guide, and why mentoring is one of my favorite parts of the job.",
+  },
+  {
+    label: 'Respect the people using it.',
+    text: "I'm straight with people about their data, and I don't build things meant to keep them hooked.",
+  },
+];
+
+const testimonials = [
+  {
+    text: "[Alex's] architecture is really easy to work with and to make rapid and effective modifications to.",
+    cite: 'Chris Psiaki, CTO, Topia',
+  },
+  {
+    text: "He's extremely organized and an underpromise/overdeliver kind of guy. He's not a sandbagger, but he is smart and sharp about setting realistic expectations.",
+    cite: 'Mark Bullard, Founder, BrainSquall',
+  },
+];
 ---
 
 <Base
   title="About"
-  description="Staff software engineer at Solace Health. Product, mostly backend, and the standards a team runs on."
+  description="Born in Montreal, raised in northern Nevada, now a staff software engineer in Seattle."
 >
-  <h1>About</h1>
+  <div class="intro">
+    <h1>About</h1>
 
-  <div class="prose">
-    <p>
-      I'm Alex, a staff software engineer at Solace Health, mostly on the
-      backend. I've joined three startups early, two of them as the first
-      engineer, so I've seen most of the ways a young codebase can go sideways,
-      and a few ways to keep it from happening.
-    </p>
-    <p>
-      The problems I like best are the ones a team has learned to live with: the
-      dashboard nobody trusts, the bug that keeps coming back. I like finding the
-      cause, fixing it with the people who own it, and then making it hard to
-      break again with a lint rule, a CI check, or a short written standard.
-    </p>
-    <p>
-      A lot of what I'm proudest of isn't code. At Solace I wrote the process we
-      use to plan work across teams, and the backend guide that new hires and
-      coding agents both learn from. I've done a lot of the interviewing as the
-      team grew, and mentoring is still one of my favorite parts of the job.
-    </p>
-    <p>
-      Outside work I'm building <a href={PIKOS.site}>Pikos</a>: notes, tasks and
-      calendar in one app, with everything on your device. It's also where I see
-      how far coding agents can go. I pick the architecture and make the calls,
-      and agents do most of the typing. I also built
-      <a href="https://github.com/Alex-AK/hone">Hone</a>, a small practice app
-      for keeping my own fundamentals sharp.
-    </p>
-    <p>
-      If you want to talk shop, <a href={EMAIL}>email</a>'s the best way to
-      reach me.
-    </p>
+    <div class="prose">
+      <p>
+        I'm Alex. Born in Montreal, raised in northern Nevada, and living in
+        Seattle, where I'm a staff software engineer at Solace Health. Before
+        that I was the first engineer hired at two startups, Topia and
+        BrainSquall.
+      </p>
+      <p>
+        As a biologist turned yoga instructor turned software engineer, I can
+        say with some authority that miniature dachshunds are objectively the
+        best kind of dog. I live with one.
+      </p>
+      <p>
+        Off the clock it's usually coffee, a bike ride, or something fermenting
+        on the counter while something else bakes. Also more code, because I
+        like it, which is how <a href={PIKOS.site}>Pikos</a> happened.
+      </p>
+    </div>
   </div>
+
+  <Section label="Values">
+    <ul class="values">
+      {values.map((value) => (
+        <li>
+          <strong>{value.label}</strong> {value.text}
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section label="Kind words">
+    <div class="testimonials">
+      {testimonials.map((quote) => (
+        <blockquote>
+          <p>{quote.text}</p>
+          <cite>{quote.cite}</cite>
+        </blockquote>
+      ))}
+    </div>
+  </Section>
+
+  <p>
+    If you want to talk shop, or bread, <a href={EMAIL}>email</a>'s the best way
+    to reach me.
+  </p>
 </Base>
 
 <style>
-  h1 {
-    font-size: 2.25rem;
-    font-weight: 400;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-title);
   }
 
   .prose {
     display: flex;
     flex-direction: column;
-    gap: 1.125rem;
+    gap: var(--space-block);
+  }
+
+  .values {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-block);
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  blockquote {
+    margin: 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--accent-soft);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-tight);
+  }
+
+  blockquote p {
+    font-style: italic;
+  }
+
+  cite {
+    font-size: var(--text-small);
+    font-style: normal;
+    color: var(--muted);
   }
 </style>

@@ -7,7 +7,7 @@ export const SITE = {
   url: 'https://alex-ak.com',
   title: 'Alex King',
   description:
-    'Staff software engineer in Seattle. Product, mostly backend. Building Pikos.',
+    'Staff software engineer at Solace Health in Seattle, mostly backend. Building Pikos: notes, tasks, and calendar in one app.',
   author: 'Alex King',
   locale: 'en',
 } as const;
@@ -30,7 +30,7 @@ export const PIKOS = {
   repo: 'https://github.com/Pikos-App/pikos',
 } as const;
 
-/** Umami is self-service and cookie-free, so the id is public by design. */
+/** Public by design: the id ships in every page's HTML anyway. */
 export const ANALYTICS = {
   src: 'https://cloud.umami.is/script.js',
   websiteId: '4ec75dff-25bd-4030-a8e3-2bc92191b7a2',

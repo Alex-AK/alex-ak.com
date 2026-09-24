@@ -11,17 +11,16 @@ const posts = (await listPosts()).slice(0, 4);
 <Base>
   <div class="lead">
     <p>
-      Hi, I'm Alex, a staff software engineer in Seattle. I build product,
-      mostly backend these days. I also like the quieter work: writing the
-      guide, adding the lint rule, making it so nobody has to ask me how
-      something works.
+      Hi, I'm Alex, a staff software engineer at Solace Health in Seattle,
+      mostly on the backend. The work I like best is finding the problem
+      everyone's learned to live with and fixing it for good.
     </p>
     <p>
-      On the side I'm building <a href={PIKOS.site}>Pikos</a>, a notes, tasks
-      and calendar app that keeps everything on your device. Rust and React
-      behind a Tauri shell, no account and no cloud, and
-      <a href={PIKOS.repo}>the code is public</a> so you don't have to take my
-      word for it.
+      On the side I'm building <a href={PIKOS.site}>Pikos</a>: notes, tasks,
+      and calendar in one app. I started it to stop juggling Obsidian, TickTick,
+      and Google Calendar. There's no account, nothing leaves your device unless
+      you want it to, and <a href={PIKOS.repo}>the code is public</a> so you
+      don't have to take my word for it.
     </p>
   </div>
 
@@ -30,69 +29,18 @@ const posts = (await listPosts()).slice(0, 4);
   <Section label="Writing">
     <PostList posts={posts} empty="First one is in progress." />
   </Section>
-
-  <hr />
-
-  <Section label="Work">
-    <p>
-      I'm at <strong>Solace Health</strong>, a healthcare advocacy marketplace,
-      where I was one of the first twenty engineers. These days it's mostly
-      backend product work, the monitoring people actually rely on, and the
-      standards a team leans on instead of leaning on me.
-    </p>
-    <p>
-      Before that, four years at <strong>Topia</strong> as the first engineer
-      hire, building a browser-based virtual world with spatial audio and video.
-      Frontend architecture, then platform. And before that,
-      <strong>BrainSquall</strong>, where I was also the first engineer and got
-      to build a whole product from an idea.
-    </p>
-  </Section>
-
-  <blockquote>
-    <p>
-      He's extremely organized and an underpromise/overdeliver kind of guy. He's
-      not a sandbagger, but he is smart and sharp about setting realistic
-      expectations.
-    </p>
-    <cite>Mark Bullard, Founder, BrainSquall</cite>
-  </blockquote>
 </Base>
 
 <style>
   .lead {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 
   .lead p {
     font-size: var(--text-lead);
     line-height: var(--leading-lead);
     font-weight: 300;
-  }
-
-  strong {
-    font-weight: 600;
-  }
-
-  blockquote {
-    margin: 0;
-    padding-left: 1.625rem;
-    border-left: 2px solid var(--accent-soft);
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  blockquote p {
-    font-size: 1.25rem;
-    font-style: italic;
-  }
-
-  cite {
-    font-size: var(--text-small);
-    font-style: normal;
-    color: var(--muted);
   }
 </style>
