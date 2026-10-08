@@ -1,6 +1,6 @@
 ---
 import Base from './Base.astro';
-import { formatDate, type Post } from '../lib/posts';
+import { formatDate, readingMinutes, type Post } from '../lib/posts';
 import { EMAIL, PIKOS } from '../consts';
 
 interface Props {
@@ -15,9 +15,11 @@ const { title, description, published, updated } = post.data;
   <article>
     <header>
       <h1>{title}</h1>
+      <p class="dek">{description}</p>
       <p class="meta">
         <time datetime={published.toISOString()}>{formatDate(published)}</time>
         {updated && <span> · updated {formatDate(updated)}</span>}
+        <span> · {readingMinutes(post)} min read</span>
       </p>
     </header>
     <div class="prose">
@@ -49,6 +51,11 @@ const { title, description, published, updated } = post.data;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .dek {
+    font-size: var(--text-heading);
+    color: var(--muted-strong);
   }
 
   .meta {
