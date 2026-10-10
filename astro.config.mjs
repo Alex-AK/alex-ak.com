@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import rehypeExternalLinks from 'rehype-external-links';
 
 import { SITE } from './src/consts.ts';
 
@@ -9,5 +10,8 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: 'github-light', wrap: true },
     smartypants: false,
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+    ],
   },
 });
