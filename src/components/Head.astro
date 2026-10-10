@@ -5,9 +5,17 @@ interface Props {
   title?: string;
   description?: string;
   type?: 'website' | 'article';
+  published?: Date;
+  updated?: Date;
 }
 
-const { title, description = SITE.description, type = 'website' } = Astro.props;
+const {
+  title,
+  description = SITE.description,
+  type = 'website',
+  published,
+  updated,
+} = Astro.props;
 
 const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -18,6 +26,7 @@ const ogImage = new URL('/og.png', Astro.site);
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{pageTitle}</title>
 <meta name="description" content={description} />
+<meta name="author" content={SITE.author} />
 <link rel="canonical" href={canonical} />
 
 <meta property="og:type" content={type} />
@@ -30,6 +39,9 @@ const ogImage = new URL('/og.png', Astro.site);
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="alex-ak.com" />
 <meta name="twitter:card" content="summary_large_image" />
+{type === 'article' && <meta property="article:author" content={SITE.author} />}
+{published && <meta property="article:published_time" content={published.toISOString()} />}
+{updated && <meta property="article:modified_time" content={updated.toISOString()} />}
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />

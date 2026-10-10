@@ -10,15 +10,23 @@ interface Props {
   title?: string;
   description?: string;
   type?: 'website' | 'article';
+  published?: Date;
+  updated?: Date;
 }
 
-const { title, description, type } = Astro.props;
+const { title, description, type, published, updated } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={SITE.locale}>
   <head>
-    <Head title={title} description={description} type={type} />
+    <Head
+      title={title}
+      description={description}
+      type={type}
+      published={published}
+      updated={updated}
+    />
     <Analytics />
   </head>
   <body>
