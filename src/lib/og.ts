@@ -12,7 +12,9 @@ const ACCENT_SOFT = '#9ab8aa';
 const WIDTH = 1200;
 const HEIGHT = 630;
 const INSET = 88;
-const TITLE_SIZE = 80;
+// LinkedIn shows previews shrunk to 480px wide, so type is sized to stay legible there.
+const TITLE_SIZE = 96;
+const DOMAIN_SIZE = 48;
 
 const fontPath = join(
   process.cwd(),
@@ -29,7 +31,7 @@ export async function renderPostImage(title: string): Promise<Uint8Array<ArrayBu
       style: {
         display: 'flex',
         flexWrap: 'wrap',
-        maxWidth: 960,
+        maxWidth: WIDTH - 2 * INSET,
         fontSize: TITLE_SIZE,
         lineHeight: 1.15,
         color: INK,
@@ -45,10 +47,10 @@ export async function renderPostImage(title: string): Promise<Uint8Array<ArrayBu
   const domain = {
     type: 'div',
     props: {
-      style: { display: 'flex', alignItems: 'center', fontSize: 36, color: ACCENT },
+      style: { display: 'flex', alignItems: 'center', fontSize: DOMAIN_SIZE, color: ACCENT },
       children: [
         'alex-ak.com',
-        { type: 'div', props: { style: { width: 3, height: 44, marginLeft: 6, background: ACCENT_SOFT } } },
+        { type: 'div', props: { style: { width: 4, height: DOMAIN_SIZE * 1.2, marginLeft: 8, background: ACCENT_SOFT } } },
       ],
     },
   };
