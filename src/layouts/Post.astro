@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import { formatDate, readingMinutes, type Post } from '../lib/posts';
 import { EMAIL, PIKOS } from '../consts';
+import { POST_IMAGE_VERSION } from '../lib/og';
 
 interface Props {
   post: Post;
@@ -17,7 +18,7 @@ const { title, description, published, updated } = post.data;
   type="article"
   published={published}
   updated={updated}
-  image={`/og/${post.id}.png`}
+  image={`/og/${post.id}.png?v=${POST_IMAGE_VERSION}`}
   imageAlt={title}
 >
   <article>

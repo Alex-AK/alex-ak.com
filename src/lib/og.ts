@@ -16,6 +16,10 @@ const INSET = 88;
 const TITLE_SIZE = 96;
 const DOMAIN_SIZE = 48;
 
+/** Goes in the image's URL. LinkedIn caches a preview by that URL and ignores a
+ *  re-scrape of the page, so bump this whenever the card's design changes. */
+export const POST_IMAGE_VERSION = 2;
+
 const fontPath = join(
   process.cwd(),
   'node_modules/@fontsource/newsreader/files/newsreader-latin-400-normal.woff'
