@@ -17,6 +17,8 @@ const { title, description, published, updated } = post.data;
   type="article"
   published={published}
   updated={updated}
+  image={`/og/${post.id}.png`}
+  imageAlt={title}
 >
   <article>
     <header>

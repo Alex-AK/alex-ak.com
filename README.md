@@ -28,15 +28,16 @@ unfinished post is safe to commit. Drop the line to publish.
 ## How it's put together
 
 ```
-public/               favicon, and og.png for link previews
+public/               favicon, and og.png, the link preview for every page but a post
 src/
 ├── consts.ts         site metadata, nav, socials, analytics id
 ├── content.config.ts the writing collection's schema
 ├── lib/posts.ts      the only reader of that collection
+├── lib/og.ts         draws a post's own link preview at build time
 ├── styles/           tokens.css, then global.css
 ├── components/       Head, Analytics, SiteHeader, SiteFooter, Section, PostList
 ├── layouts/          Base (the shell), Post (a written piece)
-└── pages/            index, about, writing/, rss.xml
+└── pages/            index, about, writing/, og/ (post previews), rss.xml
 ```
 
 Two rules hold the structure up:
