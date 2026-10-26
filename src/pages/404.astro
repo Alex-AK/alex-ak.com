@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Not found" description="There's no page at this address.">
+  <div class="intro">
+    <h1>Not found</h1>
+    <p>There's no page at this address. The <a href="/">home page</a> has everything that is.</p>
+  </div>
+</Base>
+
+<style>
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-title);
+  }
+</style>
