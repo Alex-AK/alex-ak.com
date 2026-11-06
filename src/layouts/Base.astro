@@ -1,6 +1,5 @@
 ---
 import Head from '../components/Head.astro';
-import Analytics from '../components/Analytics.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { SITE } from '../consts';
@@ -31,7 +30,6 @@ const { title, description, type, published, updated, image, imageAlt } = Astro.
       image={image}
       imageAlt={imageAlt}
     />
-    <Analytics />
   </head>
   <body>
     <a href="#main" class="skip">Skip to content</a>

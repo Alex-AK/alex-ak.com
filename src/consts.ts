@@ -29,9 +29,3 @@ export const PIKOS = {
   site: 'https://pikos.app',
   repo: 'https://github.com/Pikos-App/pikos',
 } as const;
-
-/** Public by design: the id ships in every page's HTML anyway. */
-export const ANALYTICS = {
-  src: 'https://cloud.umami.is/script.js',
-  websiteId: '4ec75dff-25bd-4030-a8e3-2bc92191b7a2',
-} as const;

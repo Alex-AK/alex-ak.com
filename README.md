@@ -30,12 +30,12 @@ unfinished post is safe to commit. Drop the line to publish.
 ```
 public/               favicon, and og.png, the link preview for every page but a post
 src/
-├── consts.ts         site metadata, nav, socials, analytics id
+├── consts.ts         site metadata, nav, socials
 ├── content.config.ts the writing collection's schema
 ├── lib/posts.ts      the only reader of that collection
 ├── lib/og.ts         draws a post's own link preview at build time
 ├── styles/           tokens.css, then global.css
-├── components/       Head, Analytics, SiteHeader, SiteFooter, Section, PostList
+├── components/       Head, SiteHeader, SiteFooter, Section, PostList
 ├── layouts/          Base (the shell), Post (a written piece)
 └── pages/            index, about, writing/, og/ (post previews), rss.xml
 ```
@@ -61,7 +61,6 @@ reasoning behind the palette is at the top of `tokens.css`.
 
 ## Deployment
 
-Coolify builds it on push and serves `dist/` at alex-ak.com. Analytics is
-Umami, which sets no cookies and collects nothing personal, so there's no
-consent banner and the site id is public by design. It only loads in production
-builds.
+Coolify builds it on push and serves `dist/` at alex-ak.com. The site runs no
+analytics script; page views are counted from Cloudflare's request logs, so
+there's nothing to consent to.
